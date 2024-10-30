@@ -11,10 +11,9 @@
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
 
-    <title>Calculadora de amortización</title>
-    <title>Calculadora de Amortización: Calcula tu préstamo o hipoteca fácilmente</title>
-    <meta name="description" content="Usa nuestra calculadora de amortización para conocer el pago mensual de tu préstamo, con método de amortización Frances, Aleman y Americano. Fácil, rápida y precisa. ¡Calcula ahora!">
-    <meta name="keywords" content="Calculadora de amortización, Amortización de préstamos, Método Frances, Método Aleman, Método Americano, Fórmula de amortización, Cálculo de pago mensual, Tasas de interés de préstamos, ">
+    <title>Calculadora de Amortización: Calcula tu plan de pagos fácilmente</title>
+    <meta name="description" content="Usa nuestra calculadora de plan de pagos para conocer la cuota mensual (periodo) de tu préstamo, con método de amortización Frances, Aleman y Americano. Fácil, rápida y precisa. ¡Calcula ahora!">
+    <meta name="keywords" content="Calcular plan de pagos, Amortización de préstamos, Método Frances, Método Aleman, Método Americano, Fórmula de amortización, Cálculo de pago mensual, Tasas de interés de préstamos, ">
     <meta name="author" content="Israel Cruz">
 </head>
 
@@ -22,7 +21,7 @@
     <div class="container">
         <div class="row mt-3">
             <div class="col-12 col-sm-12 col-lg-6">
-                <h2 class="h2"><i class="bi bi-calculator"></i> Calculadora de amortización</h2>
+                <h1 class="h2"><i class="bi bi-calculator"></i> Calculadora de plan de pagos</h1>
                 <div class="form-group mt-2 mb-3">
                     <label for="fecha">Fecha de Inicio</label>
                     <input type="date" class="form-control" id="fecha" placeholder="Ingresar fecha de inicio">
@@ -32,7 +31,7 @@
                     <input type="number" class="form-control" id="monto" placeholder="Ingresar monto">
                 </div>
                 <div class="form-group mt-2 mb-3">
-                    <label for="tiempo">Tiempo Año</label>
+                    <label for="tiempo">Tiempo Años</label>
                     <input type="number" class="form-control" id="tiempo" placeholder="Ingresar el tiempo en años">
                 </div>
                 <div class="form-group mt-2 mb-3">
@@ -52,7 +51,7 @@
                 </div> -->
                 <div class="form-group mt-2 mb-3">
                     <label for="interes">Interés Anual %</label>
-                    <input type="text" class="form-control" id="interes" placeholder="Ingresar tasa de interés anual">
+                    <input type="number" class="form-control" id="interes" placeholder="Ingresar tasa de interés anual">
                 </div>
                 <div class="form-group mt-2 mb-3 alert alert-danger" hidden id="alert-error">
                     Debes llenar todos los campos!
@@ -62,15 +61,15 @@
                 <button type="button" class="btn btn-primary" id="calcAmerican">Americano</button>
             </div>
             <div class="col-12 col-sm-12 col-lg-6">
-                <table id="lista-tabla" class="table">
+                <table id="lista-tabla" class="table text-end">
                     <thead>
                         <tr>
                             <th>Periodo</th>
                             <th>Fecha</th>
+                            <th>Saldo</th>
                             <th>Amortización</th>
                             <th>Interés</th>
                             <th>Cuota</th>
-                            <th>Saldo</th>
                         </tr>
                     </thead>
                     <tbody></tbody>
@@ -79,27 +78,55 @@
         </div>
     </div>
 
-    <div class="fixed-bottom">
-        <div class="container">
-            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-              <div class="col-md-4 d-flex align-items-center">
-                <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-                  <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-                </a>
-                <span class="text-muted">&copy; Copyright 2024 L, Inc</span>
-              </div>
-          
-              <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-                <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-                <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
-              </ul>
-            </footer>
-        </div>
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+            <a href="#" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                <!-- <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"><symbol id="bootstrap" viewBox="0 0 118 94">
+                    <title>Bootstrap</title>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"></path>
+                    </symbol></use>
+                </svg> -->
+
+                <svg class="bi" width="24" height="24">
+                    <use xlink:href="#lawliet"><symbol id="lawliet" viewBox="0 0 834 834">
+                        <circle cx="416.667" cy="416.667" r="416.667"/>
+                        <title>Lawliet</title>
+                        <path fill-rule="evenodd";clip-rule="evenodd";stroke-linejoin="round";stroke-miterlimit="2"; d="M574.504,139.262l8.972,13.367c-28.076,4.15 -49.073,12.268 -62.989,24.353c-13.916,12.085 -20.874,29.968 -20.874,53.65c0,12.939 1.343,31.616 4.029,56.03c4.883,41.992 7.324,76.294 7.324,102.905c-0,35.889 -7.996,67.322 -23.987,94.299c-15.991,26.978 -53.406,65.613 -112.243,115.906c38.543,-12.573 73.183,-18.86 103.918,-18.86c28.053,0 53.24,3.855 75.562,11.565c22.322,7.709 47.143,21.108 74.464,40.197l36.713,-33.005l10.734,12.737l-95.032,81.665c-25.852,-19.287 -51.644,-33.386 -77.376,-42.297c-25.732,-8.911 -55.793,-13.367 -90.182,-13.367c-31.948,0 -62.008,3.785 -90.18,11.353c-28.171,7.568 -64.451,22.339 -108.839,44.311l-7.507,-10.437c44.189,-32.684 73.486,-58.843 87.891,-78.477c14.404,-19.635 21.606,-38.111 21.606,-55.43c-0,-16.586 -5.237,-30.428 -15.71,-41.525c-10.473,-11.097 -22.529,-16.645 -36.166,-16.645c-6.821,-0 -14.614,2.075 -23.38,6.225l-11.17,-10.803c9.033,-7.988 17.334,-13.555 24.903,-16.702c7.568,-3.148 16.357,-4.721 26.367,-4.721c5.859,-0 11.841,0.793 17.944,2.38c6.104,1.587 12.207,4.09 18.311,7.508c0.488,-5.616 0.732,-10.132 0.732,-13.55c0,-15.625 -5.849,-29.175 -17.547,-40.65c-11.697,-11.474 -26.074,-17.212 -43.13,-17.212c-12.184,0 -24.734,4.883 -37.651,14.649l-13,-8.972c9.033,-11.906 18.31,-20.287 27.832,-25.143c15.137,-8.019 31.25,-12.028 48.34,-12.028c3.662,0 7.69,0.336 12.085,1.007c4.394,0.672 9.033,1.679 13.916,3.022c-1.465,-14.924 -2.198,-27.399 -2.198,-37.428c0,-29.602 4.456,-54.801 13.367,-75.597c8.911,-20.796 24.231,-42.447 45.96,-64.954c-23.392,8.301 -43.251,12.451 -59.578,12.451c-16.083,0 -36.429,-3.784 -61.037,-11.352c-11.208,-3.418 -20.102,-5.127 -26.682,-5.127c-12.673,-0 -23.335,4.015 -31.986,12.045c-8.652,8.03 -12.978,17.641 -12.978,28.833c-0,4.139 1.099,9.007 3.296,14.603l-15.93,5.676c-2.808,-11.475 -4.212,-20.996 -4.212,-28.564c0,-23.682 9.137,-44.251 27.412,-61.707c18.274,-17.456 40.204,-26.184 65.789,-26.184c11.692,-0 29.782,4.394 54.271,13.183c24.488,8.79 43.555,13.184 57.2,13.184c24.853,0 48.487,-8.789 70.902,-26.367l10.803,13.367c-24.28,18.302 -41.337,36.362 -51.169,54.179c-9.833,17.816 -14.749,39.414 -14.749,64.793c0,18.792 1.221,40.512 3.662,65.163c4.883,46.368 7.325,77.848 7.325,94.442c-0,35.389 -5.716,67.421 -17.147,96.096c-11.43,28.676 -32.103,61.804 -62.018,99.387c45.548,-32.471 78.246,-65.796 98.096,-99.976c19.85,-34.18 29.775,-72.632 29.775,-115.356c-0,-24.17 -1.709,-50.721 -5.127,-79.651c-3.418,-28.931 -5.127,-53.284 -5.127,-73.059c-0,-17.578 4.135,-34.912 12.405,-52.002c8.27,-17.09 19.216,-30.518 32.836,-40.284c13.62,-9.765 28.701,-16.845 45.241,-21.24c12.406,-3.174 31.378,-5.127 56.918,-5.859Z" style="fill:#fff;fill-rule:nonzero;"/>
+                    </symbol></use>
+                </svg>
+                <!-- <svg class="bi" width="24" height="24" viewBox="0 0 834 834" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                    <use xlink:href="#l"><symbol id="l" viewBox="0 0 834 834">
+                        <title>Bootstrap</title>
+                    <path fill-rule="evenodd";clip-rule="evenodd";stroke-linejoin="round";stroke-miterlimit="2"; d="M600.81,93.028l10.467,15.594c-32.755,4.842 -57.251,14.313 -73.486,28.412c-16.235,14.099 -24.353,34.963 -24.353,62.592c-0,15.096 1.566,36.885 4.7,65.368c5.696,48.991 8.545,89.01 8.545,120.056c-0,41.871 -9.329,78.543 -27.985,110.016c-18.656,31.474 -62.307,76.549 -130.951,135.224c44.968,-14.669 85.38,-22.003 121.238,-22.003c32.729,-0 62.114,4.497 88.156,13.491c26.042,8.995 55,24.627 86.874,46.897l42.832,-38.505l12.524,14.86l-110.871,95.276c-30.161,-22.502 -60.252,-38.951 -90.272,-49.347c-30.021,-10.397 -65.092,-15.595 -105.213,-15.595c-37.273,0 -72.343,4.415 -105.209,13.245c-32.867,8.83 -75.193,26.062 -126.979,51.697l-8.759,-12.177c51.555,-38.132 85.734,-68.651 102.539,-91.557c16.805,-22.907 25.208,-44.463 25.208,-64.668c-0,-19.351 -6.11,-35.499 -18.328,-48.446c-12.219,-12.946 -26.284,-19.42 -42.194,-19.42c-7.958,0 -17.05,2.422 -27.277,7.264l-13.031,-12.604c10.539,-9.319 20.223,-15.815 29.053,-19.487c8.829,-3.671 19.083,-5.507 30.761,-5.507c6.836,0 13.815,0.926 20.935,2.777c7.121,1.852 14.242,4.771 21.363,8.759c0.569,-6.551 0.854,-11.821 0.854,-15.808c0,-18.23 -6.824,-34.038 -20.471,-47.425c-13.647,-13.387 -30.42,-20.08 -50.318,-20.08c-14.215,-0 -28.857,5.696 -43.926,17.09l-15.168,-10.468c10.539,-13.89 21.363,-23.668 32.471,-29.333c17.659,-9.355 36.458,-14.032 56.396,-14.032c4.273,-0 8.973,0.391 14.1,1.174c5.127,0.784 10.538,1.959 16.235,3.525c-1.709,-17.41 -2.564,-31.965 -2.564,-43.666c0,-34.535 5.199,-63.934 15.595,-88.196c10.396,-24.262 28.269,-49.522 53.619,-75.779c-27.29,9.684 -50.459,14.526 -69.507,14.526c-18.763,-0 -42.5,-4.415 -71.21,-13.245c-13.076,-3.987 -23.452,-5.981 -31.129,-5.981c-14.785,-0 -27.224,4.684 -37.317,14.052c-10.094,9.369 -15.141,20.582 -15.141,33.639c0,4.829 1.282,10.508 3.845,17.037l-18.585,6.622c-3.275,-13.387 -4.913,-24.495 -4.913,-33.325c-0,-27.629 10.66,-51.626 31.98,-71.991c21.32,-20.366 46.905,-30.548 76.754,-30.548c13.641,-0 34.746,5.127 63.316,15.381c28.57,10.254 50.814,15.38 66.734,15.38c28.995,0 56.567,-10.253 82.718,-30.761l12.604,15.594c-28.327,21.354 -48.226,42.423 -59.697,63.209c-11.471,20.786 -17.207,45.984 -17.207,75.593c-0,21.923 1.424,47.264 4.272,76.023c5.697,54.095 8.545,90.823 8.545,110.183c0,41.287 -6.668,78.657 -20.003,112.112c-13.336,33.454 -37.455,72.104 -72.355,115.95c53.138,-37.882 91.287,-76.762 114.445,-116.638c23.158,-39.876 34.737,-84.737 34.737,-134.582c0,-28.199 -1.994,-59.174 -5.981,-92.926c-3.988,-33.753 -5.982,-62.165 -5.982,-85.236c0,-20.508 4.825,-40.731 14.473,-60.669c9.649,-19.938 22.418,-35.604 38.309,-46.997c15.89,-11.393 33.484,-19.653 52.781,-24.78c14.473,-3.703 36.608,-5.982 66.404,-6.836Z" style="fill-rule:nonzero;"/>
+                    </symbol></use>
+                </svg> -->
+            </a>
+            <span class="text-muted">Copyright &copy; 2024 L, Inc</span>
+            </div>
+        
+            <!-- <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#linkedin"><symbol id="linkedin" viewBox="0 0 16 16">
+                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+            </symbol></use></svg></a></li>
+                            
+            <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"><symbol id="twitter" viewBox="0 0 16 16">
+                <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path>
+            </symbol></use></svg></a></li>
+
+            <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"><symbol id="instagram" viewBox="0 0 16 16">
+                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+            </symbol></use></svg></a></li>
+
+            <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"><symbol id="facebook" viewBox="0 0 16 16">
+                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"></path>
+            </symbol></use></svg></a></li>
+            </ul> -->
+        </footer>
     </div>
 
     <script src="js/dayjs.min.js"></script>
-    <script src="js/aleman.js"></script>
+    <script src="js/planpago.js"></script>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
